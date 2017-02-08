@@ -1,0 +1,19 @@
+<template name="Pages_AdminPanel_Newsletter">
+    <h3>
+        {{#if $not isNew}} <button class="btn btn-default actions-delete">{{_ "delete"}}</button> {{/if}}
+
+        {{#if isNew}} {{_ "new"}} {{/if}}
+        {{_ "pages.admin_panel.newsletter.name"}}
+        {{#if $not isNew}} <small>{{newsletter.subject}}</small> {{/if}}
+    </h3>
+
+    {{> quickForm
+        id="autoform-adminpanel-newsletter"
+        schema=$FormSchemas.AdminPanel.Newsletter
+        type="method"
+        meteormethod=submitMethod
+        doc=formDoc
+        validation="submitThenBlur"
+        buttonContent=submitButton
+    }}
+</template>

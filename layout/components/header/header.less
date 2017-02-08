@@ -1,0 +1,59 @@
+#header {
+    width: 100%;
+    height: @header-height;
+    background-color: @header-background-color;
+    z-index: 1000;
+    border-bottom: 1px solid @layout-border-color;
+
+    a {
+        background-color: transparent;
+        color: @header-link-color;
+
+        &:hover {
+            background-color: transparent;
+            color: @header-link-hover-color;
+        }
+    }
+
+    > #logo {
+        display: inline-block;
+        width: @menu-width;
+        height: 100%;
+        background-color: @header-logo-background-color;
+        text-align: center;
+        float: left;
+
+        .logo-image {
+            .logo;
+
+            width: 150px;
+            height: 40px;
+            margin-top: 5px;
+            background-size: contain;
+        }
+    }
+
+    > .navbar-base {
+        width: 100%;
+        padding: 0px 15px;
+
+        > .nav.navbar-nav {
+            display: inline-block;
+            margin: 0px;
+            float: left !important;
+
+            > li {
+                float: left;
+
+                > a {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+            }
+
+            &.navbar-right {
+                float: right !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+form {
+    > .form-group {
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    button[type="submit"] {
+        position: relative;
+        float: right;
+
+        &.form-button-loader {
+            &:before {
+                content: "";
+                font-size: 1.7em;
+                position: absolute;
+                top: calc(~"50% - 0.5em");
+                right: calc(~"50% - 0.5em");
+
+                .loader;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+<template name="Layouts_AdminPanel_Menu">
+    <div id="menu">
+        <h3>{{_ "layouts.admin_panel.menu.groups.general"}}</h3>
+        <ul>
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.home.name" route="AdminPanel_Home"}}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-users" text="pages.admin_panel.customers.name" route="AdminPanel_Customers"}}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-shopping-cart" text="pages.admin_panel.orders.name" route="AdminPanel_Orders"}}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-book" text="pages.admin_panel.power_contracts.name" route="AdminPanel_PowerContracts"}}
+            {{#if Template.subscriptionsReady}}
+                {{#Layouts_AdminPanel_MenuGroup text="pages.admin_panel.notifications.name" icon="fa fa-exclamation" number=totalNotifcations}}
+                    <li class="menu-link link-with-badge">
+                        {{#Components_LinkToRouter route="AdminPanel_Notifications_Orders"}}
+                            {{_ "pages.admin_panel.notifications.orders"}}
+                        {{/Components_LinkToRouter}}
+                        {{#if $gt newOrdersNumber 0}}
+                            <span class="badge">{{newOrdersNumber}}</span>
+                        {{/if}}
+                    </li>
+                {{/Layouts_AdminPanel_MenuGroup}}
+            {{/if}}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-cog" text="pages.admin_panel.config.name" route="AdminPanel_Config" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-user" text="pages.admin_panel.profile.name" route="AdminPanel_Profile" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-gavel" text="pages.admin_panel.admins.name" route="AdminPanel_Admins" }}
+            <!--{{> Layouts_AdminPanel_MenuLink icon="fa fa-users" text="pages.admin_panel.users.name" route="AdminPanel_Users" }}-->
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-send" text="pages.admin_panel.newsletters.name" route="AdminPanel_Newsletters" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-clone" text="pages.admin_panel.sliders.name" route="AdminPanel_Sliders" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-newspaper-o" text="pages.admin_panel.news-list.name" route="AdminPanel_News_List" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-briefcase" text="pages.admin_panel.projects.name" route="AdminPanel_Projects" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-info-circle" text="pages.admin_panel.theme.name" route="AdminPanel_Thems" }}
+            {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="Products" route="AdminPanel_ManageProducts"}}
+            {{#Layouts_AdminPanel_MenuGroup text="pages.admin_panel.products.name" icon="fa fa-book"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.products.tabs.white_goods" route="AdminPanel_ManageProducts_WhiteGoods"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.products.tabs.smart_meter" route="AdminPanel_ManageProducts_SmartMeter"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.products.tabs.gadgets" route="AdminPanel_ManageProducts_Gadgets"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.products.tabs.additional_services" route="AdminPanel_Additional_Services"}}
+            {{/Layouts_AdminPanel_MenuGroup}}
+            {{#Layouts_AdminPanel_MenuGroup text="pages.admin_panel.subpages.name" icon="fa fa-book"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.subpages.tabs.visionary" route="AdminPanel_Subpages_Visionary"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.subpages.tabs.aboutUs" route="AdminPanel_Subpages_AboutUs"}}
+                {{> Layouts_AdminPanel_MenuLink icon="fa fa-home" text="pages.admin_panel.subpages.tabs.activ" route="AdminPanel_Subpages_Activ"}}
+            {{/Layouts_AdminPanel_MenuGroup}}
+        </ul>
+
+
+    </div>
+</template>

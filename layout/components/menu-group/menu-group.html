@@ -1,0 +1,24 @@
+<template name="Layouts_AdminPanel_MenuGroup">
+    <li class="menu-group" style="display: {{display}};">
+        <a href="#" title="{{#if textI18n}} {{_ text}} {{else}} {{text}} {{/if}}" id="{{groupId}}" class="link">
+            <i class="{{icon}}"></i>
+
+            <span>
+                {{#if textI18n}}
+                    {{_ text}}
+                {{else}}
+                    {{text}}
+                {{/if}}
+            </span>
+            {{#if number}}
+                <span class="badge">{{number}}</span>
+            {{/if}}
+        </a>
+
+        <div class="content {{open}}">
+            <ul>
+                {{> UI.contentBlock}}
+            </ul>
+        </div>
+    </li>
+</template>

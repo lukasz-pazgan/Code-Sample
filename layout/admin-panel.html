@@ -1,0 +1,26 @@
+<template name="Layouts_AdminPanel">
+    <div id="layout-admin-panel">
+        {{#if Template.subscriptionsReady}}
+            <div id="page-wrapper" class="page {{currentRouteName}}">
+                {{> Layouts_AdminPanel_Header}}
+
+                <div>
+                    {{> Layouts_AdminPanel_Menu}}
+
+                    <div id="content">
+                        {{> yield}}
+                    </div>
+                </div>
+
+                <div>
+                    <div></div>
+                    {{> Layouts_AdminPanel_Footer}}
+                </div>
+            </div>
+        {{else}}
+            {{> Pages_Common_LoadingPage}}
+        {{/if}}
+    </div>
+
+    {{> sAlert}}
+</template>

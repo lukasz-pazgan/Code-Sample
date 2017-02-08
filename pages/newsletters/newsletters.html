@@ -1,0 +1,14 @@
+<template name="Pages_AdminPanel_Newsletters">
+    <h3>
+        {{#Components_LinkToRouter route="AdminPanel_Newsletter_New" class="btn btn-default"}} {{_ "create"}} {{/Components_LinkToRouter}}
+
+        {{_ "pages.admin_panel.newsletters.name"}}
+    </h3>
+
+    <div class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        {{_ "pages.admin_panel.newsletters.alert-info"}}
+    </div>
+
+    {{> tabular table=$Tables.AdminPanel.Newsletters class="table table-striped table-bordered table-condensed"}}
+</template>

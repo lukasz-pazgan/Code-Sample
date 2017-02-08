@@ -1,0 +1,27 @@
+<template name="Layouts_AdminPanel_MenuLink">
+    {{#if isAllowed}}
+        <li class="menu-link">
+            {{#if route}}
+                {{#Components_LinkToRouter route=route}}
+                    <i class="{{icon}}"></i>
+
+                    {{#if textI18n}}
+                        {{_ text}}
+                    {{else}}
+                        {{text}}
+                    {{/if}}
+                {{/Components_LinkToRouter}}
+            {{else}}
+                <a href="{{address}}">
+                    <i class="{{icon}}"></i>
+
+                    {{#if textI18n}}
+                        {{_ text}}
+                    {{else}}
+                        {{text}}
+                    {{/if}}
+                </a>
+            {{/if}}
+        </li>
+    {{/if}}
+</template>

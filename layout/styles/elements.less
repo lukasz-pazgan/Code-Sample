@@ -1,0 +1,25 @@
+// Loader
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loader {
+    border: 0.15em solid @loader-background-color;
+    border-top-color: @loader-color;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    animation: spin 0.7s linear infinite;
+}
